@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230920 11:55:31.273" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\konco\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Given user enter page product corporate">
+<msg timestamp="20230920 11:55:31.819" level="FAIL">No keyword with name 'Given user enter page product corporate' found.</msg>
+<status status="FAIL" starttime="20230920 11:55:31.819" endtime="20230920 11:55:31.819"/>
+</kw>
+<kw name="When user set corporate name and Type">
+<status status="NOT RUN" starttime="20230920 11:55:31.820" endtime="20230920 11:55:31.820"/>
+</kw>
+<kw name="And user set product price">
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<status status="NOT RUN" starttime="20230920 11:55:31.820" endtime="20230920 11:55:31.820"/>
+</kw>
+<kw name="And user save corporate price">
+<status status="NOT RUN" starttime="20230920 11:55:31.821" endtime="20230920 11:55:31.821"/>
+</kw>
+<kw name="Then user verify add corporate price">
+<status status="NOT RUN" starttime="20230920 11:55:31.823" endtime="20230920 11:55:31.823"/>
+</kw>
+<status status="PASS" starttime="20230920 11:55:31.293" endtime="20230920 11:55:35.551"/>
+</kw>
+<status status="PASS" starttime="20230920 11:55:31.293" endtime="20230920 11:55:35.551"/>
+</test>
+<status status="PASS" starttime="20230920 11:55:31.275" endtime="20230920 11:55:35.551"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

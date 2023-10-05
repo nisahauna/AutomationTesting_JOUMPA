@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230929 11:12:57.731" rpa="false" schemaversion="4">
+<suite id="s1" name="Regular" source="C:\Users\konco\Downloads\Nisa\JoumpaGHERKIN\Test\regular.robot">
+<test id="s1-t1" name="Login with valid credentials" line="11">
+<kw name="Given user open browser" library="login">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${delay}</arg>
+<kw name="Begin Browser" library="login">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230929 11:12:58.189" level="INFO">Opening browser 'Chrome' to base url 'https://dev.admin.joumpa.apps360.id/'.</msg>
+<msg timestamp="20230929 11:12:59.034" level="WARN">The chromedriver version (116.0.5845.96) detected in PATH at C:\Users\konco\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (117.0.5938.92); currently, chromedriver 117.0.5938.92 is recommended for chrome 117.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20230929 11:12:58.189" endtime="20230929 11:13:01.459"/>
+</kw>
+<status status="PASS" starttime="20230929 11:12:58.189" endtime="20230929 11:13:01.459"/>
+</kw>
+<kw name="Begin Web Test" library="login">
+<arg>${delay}</arg>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230929 11:13:01.459" endtime="20230929 11:13:01.577"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>${delay}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230929 11:13:01.577" endtime="20230929 11:13:01.577"/>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>JOUMPA</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230929 11:13:02.089" level="INFO">Page title is 'JOUMPA'.</msg>
+<status status="PASS" starttime="20230929 11:13:01.577" endtime="20230929 11:13:02.089"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:01.459" endtime="20230929 11:13:02.089"/>
+</kw>
+<status status="PASS" starttime="20230929 11:12:58.189" endtime="20230929 11:13:02.089"/>
+</kw>
+<kw name="When user fill the fields" library="login">
+<arg>${email2}</arg>
+<arg>${password2}</arg>
+<kw name="Input Email" library="login">
+<arg>${email}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:02.089" level="INFO">Typing text 'admindmy@joumpa.my.id' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20230929 11:13:02.089" endtime="20230929 11:13:03.886"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:02.089" endtime="20230929 11:13:03.886"/>
+</kw>
+<kw name="Fill Password" library="login">
+<arg>${password}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:pwd</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:03.888" level="INFO">Typing text 'password123' into text field 'name:pwd'.</msg>
+<status status="PASS" starttime="20230929 11:13:03.886" endtime="20230929 11:13:05.586"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:03.886" endtime="20230929 11:13:05.586"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:02.089" endtime="20230929 11:13:05.586"/>
+</kw>
+<kw name="And user click login button" library="login">
+<kw name="Click Login Button" library="login">
+<kw name="Click Button" library="Selenium2Library">
+<arg>//*[@id="root"]/div[2]/div/div[1]/div/form/div[4]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:05.586" level="INFO">Clicking button '//*[@id="root"]/div[2]/div/div[1]/div/form/div[4]/button'.</msg>
+<status status="PASS" starttime="20230929 11:13:05.586" endtime="20230929 11:13:08.205"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:05.586" endtime="20230929 11:13:08.205"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:05.586" endtime="20230929 11:13:08.205"/>
+</kw>
+<kw name="Then user verify login success" library="login">
+<arg>${role2}</arg>
+<kw name="Verify Login Success" library="login">
+<arg>${role}</arg>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//div[contains(@class, 'Toastify__toast-body')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230929 11:13:08.206" endtime="20230929 11:13:09.811"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>//div[contains(@class, 'Toastify__toast-body')]</arg>
+<arg>Well done! you have logged in as ${role}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230929 11:13:09.813" level="INFO">Verifying element '//div[contains(@class, 'Toastify__toast-body')]' contains exact text 'Well done! you have logged in as Admin Bandara'.</msg>
+<status status="PASS" starttime="20230929 11:13:09.812" endtime="20230929 11:13:10.854"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:08.206" endtime="20230929 11:13:10.854"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:08.205" endtime="20230929 11:13:10.854"/>
+</kw>
+<tag>positive_login</tag>
+<status status="PASS" starttime="20230929 11:12:58.187" endtime="20230929 11:13:10.855"/>
+</test>
+<test id="s1-t2" name="Add New Regular Booking" line="18">
+<kw name="Given user enter page booking" library="bookingReg">
+<kw name="Enter page regular booking" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[1]/div/div[4]/a[2]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:10.855" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[1]/div/div[4]/a[2]/div'.</msg>
+<status status="PASS" starttime="20230929 11:13:10.855" endtime="20230929 11:13:11.990"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230929 11:13:14.990" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230929 11:13:11.990" endtime="20230929 11:13:14.990"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:14.991" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:14.990" endtime="20230929 11:13:16.086"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Booking</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230929 11:13:16.086" endtime="20230929 11:13:16.609"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:10.855" endtime="20230929 11:13:16.609"/>
+</kw>
+<kw name="Click button add new booking" library="bookingReg">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div[1]/div[2]/div/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:16.609" level="INFO">Clicking button 'xpath:/html/body/div/div[2]/div[3]/div[1]/div[2]/div/button[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:16.609" endtime="20230929 11:13:19.255"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>New Reservation</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230929 11:13:19.255" endtime="20230929 11:13:19.774"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:16.609" endtime="20230929 11:13:19.774"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:10.855" endtime="20230929 11:13:19.774"/>
+</kw>
+<kw name="When user fill flight form" library="bookingReg">
+<arg>${airplane_number}</arg>
+<arg>${date}</arg>
+<arg>${time}</arg>
+<arg>${dateTransfer}</arg>
+<arg>${timeTransfer}</arg>
+<kw name="Click Transfer Button" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div[2]/div/div[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:19.774" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div[2]/div/div[3]'.</msg>
+<status status="PASS" starttime="20230929 11:13:19.774" endtime="20230929 11:13:21.121"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:19.774" endtime="20230929 11:13:21.121"/>
+</kw>
+<kw name="Input Flight Information" library="bookingReg">
+<arg>${airplane_number}</arg>
+<arg>${date}</arg>
+<arg>${time}</arg>
+<arg>${dateTransfer}</arg>
+<arg>${timeTransfer}</arg>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[2]/div[1]/div[2]/div/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:21.121" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[2]/div[1]/div[2]/div/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:21.121" endtime="20230929 11:13:22.220"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/div[9]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:22.220" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/div[9]'.</msg>
+<status status="PASS" starttime="20230929 11:13:22.220" endtime="20230929 11:13:23.330"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[3]/div/div[1]/div/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:23.331" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[3]/div/div[1]/div/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:23.330" endtime="20230929 11:13:24.423"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[3]/div/div[1]/div/div[1]/div[2]/div/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:24.423" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[3]/div/div[1]/div/div[1]/div[2]/div/div[1]'.</msg>
+<status status="PASS" starttime="20230929 11:13:24.423" endtime="20230929 11:13:25.529"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:airplane_number</arg>
+<arg>${airplane_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:25.530" level="INFO">Typing text '123' into text field 'name:airplane_number'.</msg>
+<status status="PASS" starttime="20230929 11:13:25.529" endtime="20230929 11:13:27.205"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:date</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:27.205" level="INFO">Typing text '30092023' into text field 'name:date'.</msg>
+<status status="PASS" starttime="20230929 11:13:27.205" endtime="20230929 11:13:28.959"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:time</arg>
+<arg>${time}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:28.959" level="INFO">Typing text '1310' into text field 'name:time'.</msg>
+<status status="PASS" starttime="20230929 11:13:28.959" endtime="20230929 11:13:30.650"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[5]/div/div[2]/div/div[1]/div[1]/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:30.650" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[5]/div/div[2]/div/div[1]/div[1]/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:30.650" endtime="20230929 11:13:31.747"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>None</arg>
+<arg>CGK</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230929 11:13:31.747" level="INFO">Sending key(s) ('CGK',) to page.</msg>
+<msg timestamp="20230929 11:13:31.749" level="INFO">Sending keys CGK</msg>
+<status status="PASS" starttime="20230929 11:13:31.747" endtime="20230929 11:13:32.323"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230929 11:13:35.323" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230929 11:13:32.323" endtime="20230929 11:13:35.323"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[5]/div/div[2]/div/div[1]/div[2]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:35.323" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[5]/div/div[2]/div/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20230929 11:13:35.323" endtime="20230929 11:13:36.453"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[6]/div/div[1]/div/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:36.453" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[6]/div/div[1]/div/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:36.453" endtime="20230929 11:13:37.534"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[6]/div/div[1]/div/div[1]/div[2]/div/div[6]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:37.534" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[3]/div[6]/div/div[1]/div/div[1]/div[2]/div/div[6]'.</msg>
+<status status="PASS" starttime="20230929 11:13:37.534" endtime="20230929 11:13:38.634"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:airplane_number_transfer_to</arg>
+<arg>${airplane_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:38.634" level="INFO">Typing text '123' into text field 'name:airplane_number_transfer_to'.</msg>
+<status status="PASS" starttime="20230929 11:13:38.634" endtime="20230929 11:13:40.394"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:date_transfer_to</arg>
+<arg>${dateTransfer}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:40.395" level="INFO">Typing text '30092023' into text field 'name:date_transfer_to'.</msg>
+<status status="PASS" starttime="20230929 11:13:40.394" endtime="20230929 11:13:42.109"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:time_transfer_to</arg>
+<arg>${timeTransfer}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:42.110" level="INFO">Typing text '2310' into text field 'name:time_transfer_to'.</msg>
+<status status="PASS" starttime="20230929 11:13:42.109" endtime="20230929 11:13:43.777"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:21.121" endtime="20230929 11:13:43.777"/>
+</kw>
+<kw name="Pick Product Type" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[4]/div[2]/div/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:43.777" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[4]/div[2]/div/div/div'.</msg>
+<status status="PASS" starttime="20230929 11:13:43.777" endtime="20230929 11:13:44.869"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:43.777" endtime="20230929 11:13:44.869"/>
+</kw>
+<kw name="Click First Next Button" library="bookingReg">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:44.869" level="INFO">Clicking button 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:44.869" endtime="20230929 11:13:47.489"/>
+</kw>
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[1]</arg>
+<arg>Paging Information</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230929 11:13:47.489" endtime="20230929 11:13:48.527"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:44.869" endtime="20230929 11:13:48.527"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:19.774" endtime="20230929 11:13:48.527"/>
+</kw>
+<kw name="And user fill passenger form" library="bookingReg">
+<arg>${first_name}</arg>
+<arg>${first_email}</arg>
+<arg>${first_phone}</arg>
+<arg>${second_name}</arg>
+<arg>${second_email}</arg>
+<arg>${second_phone}</arg>
+<kw name="Input Paging Information" library="bookingReg">
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:paging_name</arg>
+<arg>Nisa Automate Regular</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:48.527" level="INFO">Typing text 'Nisa Automate Regular' into text field 'name:paging_name'.</msg>
+<status status="PASS" starttime="20230929 11:13:48.527" endtime="20230929 11:13:50.413"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/label/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:50.413" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/label/span'.</msg>
+<status status="PASS" starttime="20230929 11:13:50.413" endtime="20230929 11:13:51.498"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:48.527" endtime="20230929 11:13:51.498"/>
+</kw>
+<kw name="Click Add Passenger Button" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div/div[2]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:51.498" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div/div[2]/div[1]'.</msg>
+<status status="PASS" starttime="20230929 11:13:51.498" endtime="20230929 11:13:52.602"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Passenger Data</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230929 11:13:52.603" endtime="20230929 11:13:53.120"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:51.498" endtime="20230929 11:13:53.120"/>
+</kw>
+<kw name="Input Passenger Information" library="bookingReg">
+<arg>${first_name}</arg>
+<arg>${first_email}</arg>
+<arg>${first_phone}</arg>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:53.123" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:53.121" endtime="20230929 11:13:54.201"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:54.201" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:54.201" endtime="20230929 11:13:55.286"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:passenger_list[0].name</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:55.286" level="INFO">Typing text 'Nisa Regular Automate' into text field 'name:passenger_list[0].name'.</msg>
+<status status="PASS" starttime="20230929 11:13:55.286" endtime="20230929 11:13:57.277"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:57.277" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:13:57.277" endtime="20230929 11:13:58.385"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div[2]/div/div[102]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:58.385" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div[2]/div/div[102]'.</msg>
+<status status="PASS" starttime="20230929 11:13:58.385" endtime="20230929 11:13:59.495"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:passenger_list[0].email</arg>
+<arg>${first_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:13:59.495" level="INFO">Typing text 'nisa@gmail.com' into text field 'name:passenger_list[0].email'.</msg>
+<status status="PASS" starttime="20230929 11:13:59.495" endtime="20230929 11:14:01.427"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[5]/div[2]/div/input</arg>
+<arg>${first_phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:01.427" level="INFO">Typing text '87727886754' into text field 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[5]/div[2]/div/input'.</msg>
+<status status="PASS" starttime="20230929 11:14:01.427" endtime="20230929 11:14:03.376"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div/div/button[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:03.376" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:03.376" endtime="20230929 11:14:04.460"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:53.120" endtime="20230929 11:14:04.460"/>
+</kw>
+<kw name="Click Another Add Passenger Button" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div/div[5]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:04.460" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div/div[5]/div[1]'.</msg>
+<status status="PASS" starttime="20230929 11:14:04.460" endtime="20230929 11:14:05.564"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Passenger Data</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230929 11:14:05.564" endtime="20230929 11:14:06.078"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:04.460" endtime="20230929 11:14:06.078"/>
+</kw>
+<kw name="Input Second Passenger Information" library="bookingReg">
+<arg>${second_name}</arg>
+<arg>${second_email}</arg>
+<arg>${second_phone}</arg>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:06.078" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:06.078" endtime="20230929 11:14:07.147"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:07.147" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:07.147" endtime="20230929 11:14:08.235"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:passenger_list[1].name</arg>
+<arg>${second_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:08.235" level="INFO">Typing text 'Hauna' into text field 'name:passenger_list[1].name'.</msg>
+<status status="PASS" starttime="20230929 11:14:08.235" endtime="20230929 11:14:09.947"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:09.947" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:09.947" endtime="20230929 11:14:11.038"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div[2]/div/div[102]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:11.038" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[3]/div[1]/div[2]/div/div[102]'.</msg>
+<status status="PASS" starttime="20230929 11:14:11.038" endtime="20230929 11:14:12.141"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:passenger_list[1].email</arg>
+<arg>${second_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:12.141" level="INFO">Typing text 'hauna@gmail.com' into text field 'name:passenger_list[1].email'.</msg>
+<status status="PASS" starttime="20230929 11:14:12.141" endtime="20230929 11:14:14.029"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[5]/div[2]/div/input</arg>
+<arg>${second_phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:14.029" level="INFO">Typing text '81320552591' into text field 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[1]/div[5]/div[2]/div/input'.</msg>
+<status status="PASS" starttime="20230929 11:14:14.029" endtime="20230929 11:14:15.992"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div/div/button[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:15.992" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:15.992" endtime="20230929 11:14:17.064"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:passenger_notes</arg>
+<arg>Automate add cross selling booking</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:17.064" level="INFO">Typing text 'Automate add cross selling booking' into text field 'name:passenger_notes'.</msg>
+<status status="PASS" starttime="20230929 11:14:17.064" endtime="20230929 11:14:19.110"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:06.078" endtime="20230929 11:14:19.110"/>
+</kw>
+<kw name="Input Booker Information" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[4]/div[2]/div[1]/label/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:19.110" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[4]/div[2]/div[1]/label/span'.</msg>
+<status status="PASS" starttime="20230929 11:14:19.110" endtime="20230929 11:14:20.250"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:19.110" endtime="20230929 11:14:20.250"/>
+</kw>
+<kw name="Click Second Next Button" library="bookingReg">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:20.250" level="INFO">Clicking button 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:20.250" endtime="20230929 11:14:22.861"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230929 11:14:22.861" endtime="20230929 11:14:23.380"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:20.250" endtime="20230929 11:14:23.380"/>
+</kw>
+<status status="PASS" starttime="20230929 11:13:48.527" endtime="20230929 11:14:23.380"/>
+</kw>
+<kw name="And user fill additional service form" library="bookingReg">
+<kw name="Input Field Lounge" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[1]/div/div[2]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:23.380" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[1]/div/div[2]/span'.</msg>
+<status status="PASS" starttime="20230929 11:14:23.380" endtime="20230929 11:14:24.457"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:24.457" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:24.457" endtime="20230929 11:14:25.537"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:25.537" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20230929 11:14:25.537" endtime="20230929 11:14:26.640"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>name:lounge_adult_number</arg>
+<arg>CTRL+A+DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230929 11:14:26.640" level="INFO">Sending key(s) ('CTRL+A+DELETE',) to name:lounge_adult_number element.</msg>
+<msg timestamp="20230929 11:14:27.951" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20230929 11:14:27.951" level="INFO">Sending key A</msg>
+<msg timestamp="20230929 11:14:27.951" level="INFO">Pressing special key DELETE down.</msg>
+<msg timestamp="20230929 11:14:27.951" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20230929 11:14:27.951" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20230929 11:14:26.640" endtime="20230929 11:14:28.496"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:lounge_adult_number</arg>
+<arg>2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:28.496" level="INFO">Typing text '2' into text field 'name:lounge_adult_number'.</msg>
+<status status="PASS" starttime="20230929 11:14:28.496" endtime="20230929 11:14:30.161"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:23.380" endtime="20230929 11:14:30.161"/>
+</kw>
+<kw name="Input Field Transport" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:30.161" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/span'.</msg>
+<status status="PASS" starttime="20230929 11:14:30.161" endtime="20230929 11:14:31.262"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:31.262" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[1]'.</msg>
+<status status="PASS" starttime="20230929 11:14:31.262" endtime="20230929 11:14:32.342"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:32.342" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div/div[1]'.</msg>
+<status status="PASS" starttime="20230929 11:14:32.342" endtime="20230929 11:14:33.440"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:33.441" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:33.440" endtime="20230929 11:14:34.518"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[1]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:34.518" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[1]/div'.</msg>
+<status status="PASS" starttime="20230929 11:14:34.518" endtime="20230929 11:14:35.611"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:total_unit</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:35.611" level="INFO">Typing text '1' into text field 'name:total_unit'.</msg>
+<status status="PASS" starttime="20230929 11:14:35.611" endtime="20230929 11:14:37.247"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:30.161" endtime="20230929 11:14:37.247"/>
+</kw>
+<kw name="Input Field Others" library="bookingReg">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[3]/div/div[2]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:37.247" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[3]/div/div[2]/span'.</msg>
+<status status="PASS" starttime="20230929 11:14:37.247" endtime="20230929 11:14:38.350"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:additional_service_description</arg>
+<arg>Sim Card</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:38.350" level="INFO">Typing text 'Sim Card' into text field 'name:additional_service_description'.</msg>
+<status status="PASS" starttime="20230929 11:14:38.350" endtime="20230929 11:14:40.074"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[3]/div[2]/label[1]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:40.074" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[3]/div[2]/label[1]/span'.</msg>
+<status status="PASS" starttime="20230929 11:14:40.074" endtime="20230929 11:14:41.182"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:additional_service_concession_percentage</arg>
+<arg>11</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:41.182" level="INFO">Typing text '11' into text field 'name:additional_service_concession_percentage'.</msg>
+<status status="PASS" starttime="20230929 11:14:41.182" endtime="20230929 11:14:42.838"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name:additional_service_ppn_percentage</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:42.838" level="INFO">Typing text '10' into text field 'name:additional_service_ppn_percentage'.</msg>
+<status status="PASS" starttime="20230929 11:14:42.838" endtime="20230929 11:14:44.522"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[3]/div[2]/div[5]/input</arg>
+<arg>50000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:44.522" level="INFO">Typing text '50000' into text field 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[2]/div[3]/div[2]/div[5]/input'.</msg>
+<status status="PASS" starttime="20230929 11:14:44.522" endtime="20230929 11:14:46.280"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:37.247" endtime="20230929 11:14:46.280"/>
+</kw>
+<kw name="Click Third Next Button" library="bookingReg">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div/div/div/button[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:46.280" level="INFO">Clicking button 'xpath:/html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[2]/div/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:46.280" endtime="20230929 11:14:48.965"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[1]/div[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230929 11:14:48.965" endtime="20230929 11:14:49.483"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:46.280" endtime="20230929 11:14:49.483"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:23.380" endtime="20230929 11:14:49.483"/>
+</kw>
+<kw name="And user input payment method" library="bookingReg">
+<arg>${payment}</arg>
+<kw name="Input Payment Proof" library="bookingReg">
+<arg>${payment}</arg>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div[2]/div[1]/div[2]/div/div[1]/div/div[1]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:49.483" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div[2]/div[1]/div[2]/div/div[1]/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:49.483" endtime="20230929 11:14:50.575"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:14:50.575" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/div[2]'.</msg>
+<status status="PASS" starttime="20230929 11:14:50.575" endtime="20230929 11:14:51.653"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath:/html/body/div/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div[2]/div[2]/input</arg>
+<arg>${payment}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230929 11:14:51.653" level="INFO">Sending C:\Users\konco\Downloads\Nisa\JoumpaGHERKIN\Variable\tf.jpg to browser.</msg>
+<status status="PASS" starttime="20230929 11:14:51.653" endtime="20230929 11:14:52.706"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:49.483" endtime="20230929 11:14:52.706"/>
+</kw>
+<status status="PASS" starttime="20230929 11:14:49.483" endtime="20230929 11:14:52.706"/>
+</kw>
+<kw name="Then user confirm regular booking" library="bookingReg">
+<kw name="Save Regular Booking" library="bookingReg">
+<kw name="Sleep" library="BuiltIn">
+<arg>20</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230929 11:15:12.706" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" starttime="20230929 11:14:52.706" endtime="20230929 11:15:12.706"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230929 11:15:12.706" level="INFO">Clicking element 'xpath:html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]'.</msg>
+<msg timestamp="20230929 11:15:13.938" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230929 11:15:13.938" level="FAIL">Element with locator 'xpath:html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]' not found.</msg>
+<status status="FAIL" starttime="20230929 11:15:12.706" endtime="20230929 11:15:13.943"/>
+</kw>
+<status status="FAIL" starttime="20230929 11:14:52.706" endtime="20230929 11:15:13.943"/>
+</kw>
+<kw name="Verify Regular Booking" library="bookingReg">
+<status status="NOT RUN" starttime="20230929 11:15:13.943" endtime="20230929 11:15:13.943"/>
+</kw>
+<status status="FAIL" starttime="20230929 11:14:52.706" endtime="20230929 11:15:13.943"/>
+</kw>
+<tag>positive_regular</tag>
+<status status="FAIL" starttime="20230929 11:13:10.855" endtime="20230929 11:15:13.943">Element with locator 'xpath:html/body/div[1]/div[2]/div[3]/div/div/div[2]/div/form/div[2]/div/div[5]/div/div/div/button[2]' not found.</status>
+</test>
+<status status="FAIL" starttime="20230929 11:12:57.742" endtime="20230929 11:15:13.943"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">positive_login</stat>
+<stat pass="0" fail="1" skip="0">positive_regular</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Regular">Regular</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230929 11:12:59.034" level="WARN">The chromedriver version (116.0.5845.96) detected in PATH at C:\Users\konco\AppData\Local\Programs\Python\Python311\Scripts\chromedriver.exe might not be compatible with the detected chrome version (117.0.5938.92); currently, chromedriver 117.0.5938.92 is recommended for chrome 117.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.9.4 on win32)" generated="20230809 17:01:54.277" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="c:\Users\Nisa Hauna\KULIAH\PKL\JOUMPA\Automate\JoumpaGHERKIN\Test\login.robot">
+<test id="s1-t1" name="Add new promo" line="23">
+<kw name="Given user enter page promo" library="promo">
+<kw name="Click Promo Button" library="promo">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230809 17:01:56.651" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230809 17:01:54.647" endtime="20230809 17:01:56.652"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="root"]/div[2]/div[1]/div/div[4]/a[8]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230809 17:01:56.654" level="INFO">Clicking element 'xpath://*[@id="root"]/div[2]/div[1]/div/div[4]/a[8]/div/div'.</msg>
+<msg timestamp="20230809 17:01:56.655" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230809 17:01:56.655" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20230809 17:01:56.653" endtime="20230809 17:01:56.702"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>xpath:/html/body/div[1]/div[2]/div[3]/div[1]/div[1]/div</arg>
+<arg>Promo Management</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20230809 17:01:56.703" endtime="20230809 17:01:56.703"/>
+</kw>
+<status status="FAIL" starttime="20230809 17:01:54.647" endtime="20230809 17:01:56.703"/>
+</kw>
+<status status="FAIL" starttime="20230809 17:01:54.646" endtime="20230809 17:01:56.704"/>
+</kw>
+<kw name="And user click promo button" library="promo">
+<status status="NOT RUN" starttime="20230809 17:01:56.705" endtime="20230809 17:01:56.705"/>
+</kw>
+<kw name="Then user input new promo" library="promo">
+<arg>${promo_name}</arg>
+<arg>${promo_code}</arg>
+<arg>${promo_value}</arg>
+<arg>${start_date}</arg>
+<arg>${end_date}</arg>
+<arg>${description}</arg>
+<arg>${file}</arg>
+<status status="NOT RUN" starttime="20230809 17:01:56.706" endtime="20230809 17:01:56.707"/>
+</kw>
+<tag>positive_add_promo</tag>
+<status status="FAIL" starttime="20230809 17:01:54.644" endtime="20230809 17:01:56.708">No browser is open.</status>
+</test>
+<status status="FAIL" starttime="20230809 17:01:54.282" endtime="20230809 17:01:56.711"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">positive_add_promo</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230809 17:01:54.640" level="ERROR">Error in file 'c:\Users\Nisa Hauna\KULIAH\PKL\JOUMPA\Automate\JoumpaGHERKIN\Resource\PO\promo.robot' on line 3: Resource file '..\Variable\promo_var.robot' does not exist.</msg>
+</errors>
+</robot>
